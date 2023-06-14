@@ -8,11 +8,15 @@ mkdir openmmlab-repos/src
 
 # pytorch for kaggle installation
 wget https://download.pytorch.org/whl/cu117/torch-1.13.0%2Bcu117-cp310-cp310-linux_x86_64.whl -P openmmlab-repos/src
+wget https://download.pytorch.org/whl/cu117/torchvision-0.14.0%2Bcu117-cp310-cp310-linux_x86_64.whl -P openmmlab-repos/src
 
 # mmcv
 mkdir openmmlab-repos/mmcv
-git clone --branch 1.x https://github.com/open-mmlab/mmcv.git openmmlab-repos/mmcv
-wget https://download.openmmlab.com/mmcv/dist/cu117/torch1.13.0/mmcv_full-1.7.0-cp310-cp310-manylinux1_x86_64.whl -P openmmlab-repos/src
+git clone --branch v2.0.0rc4 https://github.com/open-mmlab/mmcv.git openmmlab-repos/mmcv
+wget https://download.openmmlab.com/mmcv/dist/cu117/torch1.13.0/mmcv-2.0.0rc4-cp310-cp310-manylinux1_x86_64.whl -P openmmlab-repos/src
+
+# mmengine
+git clone --branch v0.7.4 https://github.com/open-mmlab/mmengine.git openmmlab-repos/mmengine
 
 # mmclassification
 # mkdir openmmlab-repos/mmclassification
@@ -20,30 +24,17 @@ wget https://download.openmmlab.com/mmcv/dist/cu117/torch1.13.0/mmcv_full-1.7.0-
 
 # mmdetection
 mkdir openmmlab-repos/mmdetection
-git clone --branch 1.x https://github.com/open-mmlab/mmdetection.git openmmlab-repos/mmdetection
+git clone --branch 3.x https://github.com/open-mmlab/mmdetection.git openmmlab-repos/mmdetection
+
 # mmsegmentation
-mkdir openmmlab-repos/mmsegmentation
-git clone --branch 1.x https://github.com/open-mmlab/mmsegmentation.git openmmlab-repos/mmsegmentation
-# mmpose
-# mkdir openmmlab-repos/mmpose
-# git clone https://github.com/open-mmlab/mmpose.git openmmlab-repos/mmpose
-# mmocr
-# mkdir openmmlab-repos/mmocr
-# git clone https://github.com/open-mmlab/mmocr openmmlab-repos/mmocr
-# mmgeneration
-# mkdir openmmlab-repos/mmgeneration
-# git clone https://github.com/open-mmlab/mmgeneration.git openmmlab-repos/mmgeneration
-# mmfewshot
-# mkdir openmmlab-repos/mmfewshot
-# git clone https://github.com/open-mmlab/mmfewshot.git openmmlab-repos/mmfewshot
-# mmtracking
-# mkdir openmmlab-repos/mmtracking
-# git clone https://github.com/open-mmlab/mmtracking.git openmmlab-repos/mmtracking
+# mkdir openmmlab-repos/mmsegmentation
+# git clone --branch eugene/master https://github.com/eugene123tw/mmsegmentation.git openmmlab-repos/mmsegmentation
 
 # download all requirements
 pip download -d openmmlab-repos/src -r openmmlab-repos/mmcv/requirements.txt
+pip download -d openmmlab-repos/src -r openmmlab-repos/mmengine/requirements.txt
 pip download -d openmmlab-repos/src -r openmmlab-repos/mmdetection/requirements.txt
-pip download -d openmmlab-repos/src -r openmmlab-repos/mmsegmentation/requirements.txt
+# pip download -d openmmlab-repos/src -r openmmlab-repos/mmsegmentation/requirements.txt
 # pip download -d openmmlab-repos/src -r openmmlab-repos/mmclassification/requirements.txt
 # pip download -d openmmlab-repos/src -r openmmlab-repos/mmpose/requirements.txt
 # pip download -d openmmlab-repos/src -r openmmlab-repos/mmocr/requirements.txt
