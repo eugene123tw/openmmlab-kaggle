@@ -32,7 +32,7 @@ git clone --branch 3.x https://github.com/open-mmlab/mmdetection.git openmmlab-r
 
 # download all requirements
 pip download -d openmmlab-repos/src -r openmmlab-repos/mmcv/requirements.txt
-pip download -d openmmlab-repos/src -r openmmlab-repos/mmengine/requirements.txt
+# pip download -d openmmlab-repos/src -r openmmlab-repos/mmengine/requirements.txt
 pip download -d openmmlab-repos/src -r openmmlab-repos/mmdetection/requirements.txt
 # pip download -d openmmlab-repos/src -r openmmlab-repos/mmsegmentation/requirements.txt
 # pip download -d openmmlab-repos/src -r openmmlab-repos/mmclassification/requirements.txt
